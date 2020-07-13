@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "317028802019",
+    "firebase_url": "https://muse-pour-tous.firebaseio.com",
+    "project_id": "muse-pour-tous",
+    "storage_bucket": "muse-pour-tous.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317028802019:android:152a7e7d25644d4eb814d6",
+        "android_client_info": {
+          "package_name": "com.example.musepourtous"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317028802019-r7h3m7oqjff0pd78c4q2t77s91t1r2ll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.musepourtous",
+            "certificate_hash": "2c809d6f50079585a419839ecc748b5066ea4b84"
+          }
+        },
+        {
+          "client_id": "317028802019-7iqg0d113ec728coq0ipfu108936aro6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO3iqf6P-yclVQ47XX9L2gnjrxpcdckkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317028802019-7iqg0d113ec728coq0ipfu108936aro6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--   <Button
+        android:id="@+id/changeLang"
+        android:layout_width="345dp"
+        android:layout_height="120dp"
+        android:text="@string/changeLang"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+       /> -->
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="264dp"
+        android:layout_height="55dp"
+
+        android:text="@string/welcome"
+        android:textColor="#03A9F4"
+
+        android:textSize="30sp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/ar"
+        android:layout_width="299dp"
+        android:layout_height="70dp"
+        android:text="@string/العربية"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/fr"
+        android:layout_width="299dp"
+        android:layout_height="70dp"
+        android:text="@string/Francais"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        />
+
+    <Button
+        android:id="@+id/en"
+        android:layout_width="299dp"
+        android:layout_height="70dp"
+        android:text="@string/English"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints" />
+</LinearLayout>
