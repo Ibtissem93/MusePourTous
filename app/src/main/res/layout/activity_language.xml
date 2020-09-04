@@ -9,15 +9,6 @@
     tools:context=".MainActivity">
 
 
-    <!--   <Button
-        android:id="@+id/changeLang"
-        android:layout_width="345dp"
-        android:layout_height="120dp"
-        android:text="@string/changeLang"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-       /> -->
-
     <TextView
         android:layout_width="264dp"
         android:layout_height="55dp"
@@ -39,7 +30,7 @@
         android:id="@+id/fr"
         android:layout_width="299dp"
         android:layout_height="70dp"
-        android:text="Francais"
+        android:text="Français"
         android:textSize="24sp"
         tools:ignore="MissingConstraints"
         />
@@ -51,4 +42,5 @@
         android:text="English"
         android:textSize="24sp"
         tools:ignore="MissingConstraints" />
+
 </LinearLayout>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Museum for all</string>
     <string name="welcome">Welcome</string>
-    <!--  <string name="changeLang">Change Language</string> -->
+    <!--  <string name="changeLang">Change language</string>-->
 
     <string name="voyant">Seeing</string>
     <string name="Nvoyant">Blind</string>
@@ -16,7 +16,7 @@
     <string name="zero">0</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
-    <string name="Play">Play</string>
+    <string name="Play">Play Music</string>
     <string name="khra">Museum for all</string>
     <string name="Title_des_bardo">Bardo Museum</string>
     <string name="des_bardo">Bardo description with English</string>
@@ -25,5 +25,4 @@
     <string name="space">Space</string>
     <string name="titeldesBardo">Bardo museum</string>
     <string name="mapB">Bardo Map</string>
-
 </resources>

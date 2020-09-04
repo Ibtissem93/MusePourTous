@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.museepourtous">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,11 +15,77 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".BardoData"></activity>
-        <activity android:name=".Bardo" />
-        <activity android:name=".Musees" />
-        <activity android:name=".VNV" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Download_Data" />
+        <activity
+            android:name=".Map_Bardo_Blind"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.Map_Bardo_Blind" />
+        </activity>
+        <activity
+            android:name=".Bardo_Data_Blind"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.Bardo_Data_Blind"
+               />
+        </activity>
+        <activity
+            android:name=".Musee_Blind"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.Musee_Blind" />
+        </activity>
+        <activity android:name=".Language" />
+        <activity
+            android:name=".BardoData"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.BardoData" />
+        </activity>
+        <activity
+            android:name=".Bardo"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.Bardo" />
+        </activity>
+        <activity
+            android:name=".Musees"
+            android:configChanges="locale"
+            android:label="@string/musee">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.Musees" />
+        </activity>
+        <activity
+            android:name=".VNV"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.VNV" />
+        </activity>
+
+        <activity
+            android:name=".Description_Bardo"
+            android:configChanges="locale"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.museepourtous.Description_Bardo" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

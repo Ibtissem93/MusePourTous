@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">متاحف للجميع</string>
+    <string name="welcome">أهلا بك</string>
+    <!-- <string name="changeLang">تغيير اللغة</string>-->
+
+    <string name="voyant">مبصر</string>
+    <string name="Nvoyant">كفيف</string>
+    <string name="bardo">متحف باردو</string>
+    <string name="bardoB">متحف باردو</string>
+    <string name="sousse">متحف سوسة</string>
+    <string name="bardoTitle">متحف باردو</string>
+    <string name="statut">المعرف العربي 65</string>
+    <string name="statutt">المعرف العربي 65</string>
+    <string name="statuttt"> المعرف العربي 65</string>
+    <string name="zero">0</string>
+    <string name="title">العنوان</string>
+    <string name="description">الوصف</string>
+    <string name="Play">تشغيل الموسيقى</string>
+    <string name="khra">متاحف للجميع</string>
+    <string name="Title_des_bardo">متحف باردو</string>
+    <string name="des_bardo">متحف باردو الوصف </string>
+    <string name="btn_bardo_des">إبدأ</string>
+    <string name="musee">المتاحف</string>
+    <string name="space">اختار</string>
+    <string name="titeldesBardo">متحف باردو</string>
+    <string name="mapB">خريطة باردو</string>
+</resources>

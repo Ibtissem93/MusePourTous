@@ -1,13 +1,23 @@
 package com.example.museepourtous;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,53 +34,52 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Locale;
 
 
 public class BardoData extends AppCompatActivity {
-TextView title,description,textCurrentTime, textTotalDuration;
-ImageView img, imagePlayPause;
-private SeekBar playerSeekBar;
-private MediaPlayer mediaPlayer;
-private Handler handler = new Handler();
+    TextView title, description, textCurrentTime, textTotalDuration;
+    ImageView img, imagePlayPause;
+
+    private SeekBar playerSeekBar;
+    private MediaPlayer mediaPlayer;
+    private Handler handler = new Handler();
     String Soundurl;
+    AssetFileDescriptor afd;
 
 
-DatabaseReference reff;
-String data1;
+    DatabaseReference reff;
+    String data1;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTitle("");
         setContentView(R.layout.activity_bardo_data);
-      //  Button btn = findViewById(R.id.btn_show);
+
         title = (TextView) findViewById(R.id.titlee);
         description = (TextView) findViewById(R.id.desc);
-        img = (ImageView) findViewById(R.id.Img) ;
-        imagePlayPause=findViewById(R.id.imagePlayPause);
-        textCurrentTime=findViewById(R.id.textCurrentTime);
-        textTotalDuration=findViewById(R.id.textTotalDuration);
-        playerSeekBar=findViewById(R.id.playerSeekBar);
-        mediaPlayer=new MediaPlayer();
+        img = (ImageView) findViewById(R.id.Img);
+        imagePlayPause = findViewById(R.id.imagePlayPause);
+        textCurrentTime = findViewById(R.id.textCurrentTime);
+        textTotalDuration = findViewById(R.id.textTotalDuration);
+        playerSeekBar = findViewById(R.id.playerSeekBar);
+        mediaPlayer = new MediaPlayer();
         playerSeekBar.setMax(100);
         Bundle extras = getIntent().getExtras();
-        if(extras != null){
+        if (extras != null) {
             data1 = extras.getString("namebutton");
         }
 
-
-
-
-   /* btn.setOnClickListener(new View.OnClickListener() {
-           @Override
-         public void onClick(View v) {
-                String buttonName = ((Button) v).getText().toString();*/
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String  language = prefs.getString("My_Lang","");
+        String language = prefs.getString("My_Lang", "");
 
-          reff = FirebaseDatabase.getInstance().getReference();
-           reff.keepSynced(true);
-           if(language.equals("en")) {
+        if(language.equals("en")) {
                 reff = FirebaseDatabase.getInstance().getReference().child("0").child("Musees").child("Bardo").child("Beacons").child(data1);
 
                 reff.addValueEventListener(new ValueEventListener() {
@@ -78,12 +87,12 @@ String data1;
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String titl = snapshot.child("title").getValue().toString();
                         String des = snapshot.child("description").getValue().toString();
-                        String urrl = snapshot.child("imageURL").getValue().toString();
+                      //  String urrl = snapshot.child("imageURL").getValue().toString();
                         Soundurl = snapshot.child("soundURL").getValue().toString();
-                        Glide.with(getApplicationContext()).load(urrl).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(img);
                         title.setText(titl);
                         description.setText(des);
-
+                        SetImage();
+                       // Picasso.with(BardoData.this).load(urrl).into(img);
 
                     }
 
@@ -93,7 +102,7 @@ String data1;
                     }
                 });
             }
-          else  if (language.equals("fr")) {
+          if (language.equals("fr")) {
 
                 reff = FirebaseDatabase.getInstance().getReference().child("1").child("Musees").child("Bardo").child("Beacons").child(data1);
 
@@ -102,11 +111,12 @@ String data1;
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String titl = snapshot.child("title").getValue().toString();
                         String des = snapshot.child("description").getValue().toString();
-                        String urrl = snapshot.child("imageURL").getValue().toString();
-                        // Soundurl = snapshot.child("soundURL").getValue().toString();
-                        Glide.with(getApplicationContext()).load(urrl).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(img);
+                      //  String urrl = snapshot.child("imageURL").getValue().toString();
+                        Soundurl = snapshot.child("soundURL").getValue().toString();
+                      //  Glide.with(getApplicationContext()).load(urrl).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(img);
                         title.setText(titl);
                         description.setText(des);
+                        SetImage();
 
 
                     }
@@ -118,7 +128,7 @@ String data1;
                 });
             }
 
-           else if (language.equals("ar")) {
+            if (language.equals("ar")) {
 
                 reff = FirebaseDatabase.getInstance().getReference().child("2").child("Musees").child("Bardo").child("Beacons").child(data1);
 
@@ -128,10 +138,11 @@ String data1;
                         String titl = snapshot.child("title").getValue().toString();
                         String des = snapshot.child("description").getValue().toString();
                         String urrl = snapshot.child("imageURL").getValue().toString();
-                        // Soundurl = snapshot.child("soundURL").getValue().toString();
-                        Glide.with(getApplicationContext()).load(urrl).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(img);
+                        Soundurl = snapshot.child("soundURL").getValue().toString();
+                       // Glide.with(getApplicationContext()).load(urrl).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(img);
                         title.setText(titl);
                         description.setText(des);
+                        SetImage();
 
 
                     }
@@ -142,8 +153,7 @@ String data1;
                     }
                 });
             }
-         // }
-   // });
+
 
       imagePlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,11 +205,30 @@ String data1;
 
     }
 
+    public  void SetImage()
+    {
+        File sdCard = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File directory = new File (sdCard.getAbsolutePath() + "/TestFolder");
+
+        File file = new File(directory, data1 + ".jpg"); //or any other format supported
+
+        Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath()); //This gets the image
+        img.setImageBitmap(bitmap);
+
+    }
+
     private void prepareMediaPlayer(){
         try {
-            mediaPlayer.setDataSource(Soundurl);
+            String filename = getExternalFilesDir(Environment.DIRECTORY_MUSIC).getAbsolutePath() +"/Sounds/"+data1+".mp3";
+
+
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+            mediaPlayer = new MediaPlayer();
+            try { mediaPlayer.setDataSource(this,Uri.parse(filename)); } catch (Exception e) {}
             mediaPlayer.prepare();
             textTotalDuration.setText(milliSecondsToTimer((mediaPlayer.getDuration())));
+
         } catch (Exception exception){
             Toast.makeText(this,exception.getMessage(),Toast.LENGTH_SHORT).show();
         }
@@ -243,6 +272,7 @@ String data1;
         timerString=timerString+minutes+":"+secondsString;
         return timerString;
     }
+
 
 
 }

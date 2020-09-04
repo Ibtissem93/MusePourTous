@@ -9,50 +9,50 @@
     tools:context=".BardoData">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="370dp"
+        android:layout_width="310dp"
         android:layout_height="49dp"
 
-        android:text="Title"
+        android:text="@string/title"
         android:textColor="#2196F3"
-        android:textSize="24sp"
+        android:textSize="18sp"
 
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/titlee"
-        android:layout_width="370dp"
-        android:layout_height="48dp"
+        android:layout_width="310dp"
+        android:layout_height="83dp"
 
         android:text=""
 
 
+        android:textSize="24sp"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="370dp"
+        android:layout_width="310dp"
         android:layout_height="42dp"
 
-        android:text="Description"
+        android:text="@string/description"
         android:textColor="#2196F3"
-        android:textSize="24sp"
+        android:textSize="18sp"
 
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/desc"
-        android:layout_width="370dp"
-        android:layout_height="88dp"
+        android:layout_width="310dp"
+        android:layout_height="91dp"
 
         android:text=""
 
+        android:textSize="24sp"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/Img"
         android:layout_width="280dp"
-        android:layout_height="154dp"
+        android:layout_height="184dp"
         app:srcCompat="@android:drawable/ic_menu_report_image" />
 
     <ImageView
@@ -60,7 +60,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
-        android:contentDescription="@string/app_name"
+        android:contentDescription="@string/Play"
         android:src="@drawable/ic_play"
         />
 
@@ -99,6 +99,11 @@
 
     </LinearLayout>
 
+  <!--  <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" /> -->
 
 
     <!-- <Button

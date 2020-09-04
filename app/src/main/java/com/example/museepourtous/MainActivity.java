@@ -1,27 +1,13 @@
 package com.example.museepourtous;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
+
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import com.bumptech.glide.Glide;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,23 +16,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
 
 
-
-        loadLocale();
+        //   loadLocale();
 
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(MainActivity.this,Download_Data.class);
+        startActivity(intent);
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(getResources().getString(R.string.app_name));
+        //   ActionBar actionBar = getSupportActionBar();
+        // actionBar.setTitle(getResources().getString(R.string.app_name));
 
-       /* Button changeLang = findViewById(R.id.changeLang);*/
-        Button arabe = findViewById(R.id.ar);
-        Button francais = findViewById(R.id.fr);
-        Button anglais = findViewById(R.id.en);
+        /* Button changeLang = findViewById(R.id.changeLang);*/
+      //  Button arabe = findViewById(R.id.ar);
+      //  Button francais = findViewById(R.id.fr);
+      //  Button anglais = findViewById(R.id.en);
 
        /* changeLang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        arabe.setOnClickListener(new View.OnClickListener() {
+      /*  arabe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setLocale("ar");
@@ -142,5 +130,6 @@ public class MainActivity extends AppCompatActivity {
         String language = prefs.getString("My_Lang","");
         setLocale(language);
 
+    }*/
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Musées Pour Tous</string>
+    <string name="welcome">Bienvenue</string>
+    <!-- <string name="changeLang">Changer de langue</string>-->
+
+    <string name="voyant">Voyant</string>
+    <string name="Nvoyant">Non voyant</string>
+    <string name="bardo">Musée Bardo</string>
+    <string name="bardoB">Musée Bardo</string>
+    <string name="sousse">Musée Sousse</string>
+    <string name="bardoTitle">Musée Bardo</string>
+    <string name="statut">testfr8096</string>
+    <string name="statutt">testfr8096</string>
+    <string name="statuttt">testfr8096</string>
+    <string name="zero">0</string>
+    <string name="title">Titre</string>
+    <string name="description">Description</string>
+    <string name="Play">Jouer de la musique</string>
+    <string name="khra">Musées Pour Tous</string>
+    <string name="Title_des_bardo">Musée Bardo</string>
+    <string name="des_bardo">Description bardo en Francais </string>
+    <string name="btn_bardo_des">Démarrer</string>
+    <string name="musee">Musées</string>
+    <string name="space">Espace</string>
+    <string name="titeldesBardo">Musée Bardo</string>
+    <string name="mapB">Carte de Bardo</string>
+</resources>
+

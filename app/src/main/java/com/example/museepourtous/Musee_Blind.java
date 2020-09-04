@@ -7,20 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Musees extends AppCompatActivity {
+public class Musee_Blind extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_musee__blind);
+        Button bardo = findViewById(R.id.bardoB);
         setTitle(R.string.musee);
-        setContentView(R.layout.activity_musees);
-        Button bardo = findViewById(R.id.bardo);
 
         bardo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Musees.this,Description_Bardo.class);
+                Intent intent = new Intent(Musee_Blind.this,Map_Bardo_Blind.class);
                 startActivity(intent);
             }
         });

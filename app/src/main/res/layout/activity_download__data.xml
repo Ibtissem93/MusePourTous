@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.museepourtous.Download_Data">
+
+    <ProgressBar
+        android:id="@+id/progressbarr"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:id="@+id/LoadingCompleteTextVieww"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading Complete"
+        android:layout_below="@+id/progressbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text=">>>" />
+
+</LinearLayout>

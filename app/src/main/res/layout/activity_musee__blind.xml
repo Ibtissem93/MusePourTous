@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Musees">
+    tools:context="com.example.museepourtous.Musee_Blind">
 
     <Button
-        android:id="@+id/bardo"
+        android:id="@+id/bardoB"
         android:layout_width="298dp"
         android:layout_height="75dp"
         android:text="@string/bardo"
@@ -24,6 +24,5 @@
         android:textSize="24sp"
         tools:ignore="MissingConstraints"
         />
-
 
 </LinearLayout>
